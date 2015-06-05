@@ -1,0 +1,9 @@
+# The sbux_df data frame is already loaded in your work space
+sbux_prices_df <- sbux_df[, "Adj.Close", drop=FALSE]
+
+# Denote n the number of time periods:
+n <- nrow(sbux_prices_df)
+sbux_ret <- ((sbux_prices_df[2:n, 1] - sbux_prices_df[1:(n-1), 1])/sbux_prices_df[1:(n-1), 1])
+
+# Notice that sbux_ret is not a data frame object
+class(sbux_ret)
