@@ -1,0 +1,5 @@
+# The simulated values (xy_vals) are still in your workspace
+
+# Create scatterplot
+plot(xy_vals[, 1], xy_vals[, 2], pch = 16, cex = 2, col = "blue", 
+     main = "Bivariate normal: rho=0.9", xlab = "x", ylab = "y")
