@@ -1,0 +1,4 @@
+# The "all_returns" zoo object is preloaded in your workspace
+
+# Test the correlation between VBLTX,FMAGX
+cor.test(x=all_returns[,"VBLTX"], y=all_returns[,"FMAGX"])
