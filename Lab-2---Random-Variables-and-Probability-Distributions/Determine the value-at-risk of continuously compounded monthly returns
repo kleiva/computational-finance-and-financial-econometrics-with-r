@@ -1,0 +1,12 @@
+# r ~ N(0.04, (0.09)^2) 
+mu_r <- 0.04
+sigma_r <- 0.09
+
+# Initial wealth W0 equals $100,000
+W0 <- 100000
+
+# The 1% value-at-risk
+W0 * (exp(qnorm(0.01, mean = mu_r, sd = sigma_r)) - 1)
+
+# The 5% value-at-risk
+W0 * (exp(qnorm(0.05, mean = mu_r, sd = sigma_r)) - 1)
