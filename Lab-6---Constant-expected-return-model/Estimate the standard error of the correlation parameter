@@ -1,0 +1,13 @@
+# Calculate the correlation matrix
+cor_matrix <- cor(return_matrix)
+
+# Get the lower triangular part of that 'cor_matrix'
+rhohat_vals <- cor_matrix[lower.tri(cor_matrix)]
+
+# Set the names
+names(rhohat_vals) <- c("VBLTX,FMAGX","VBLTX,SBUX","FMAGX,SBUX")
+
+# Compute the estimated standard errors for correlation
+se_rhohat <- (1-rhohat_vals^2)/sqrt(dim(return_matrix)[1])
+
+se_rhohat
