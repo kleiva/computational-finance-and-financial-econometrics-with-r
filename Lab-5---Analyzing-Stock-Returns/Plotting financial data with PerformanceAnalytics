@@ -1,0 +1,16 @@
+# 'all_returns' is preloaded in your workspace.
+
+# Plot returns using the PerformanceAnalytics function chart.TimeSeries().
+# This function creates a slightly nicer looking plot than plot.zoo()
+chart.TimeSeries(all_returns, legend.loc="bottom", main=" ") 
+
+# The previous charts are a bit hard to read. The PerformanceAnalytics function
+# chart.Bar makes it easier to compare the returns of different assets on the 
+# same plot
+chart.Bar(all_returns, legend.loc="bottom", main=" ")
+
+
+# Cumulative return plot - must use simple returns (!) and not cc returns for this
+# Use PerformanceAnalytics function chart.CumReturns()
+simple_returns <- diff(all_prices)/lag(all_prices, k=-1);
+chart.CumReturns(simple_returns, legend.loc="topleft", wealth.index=TRUE,main="Future Value of $1 invested")
