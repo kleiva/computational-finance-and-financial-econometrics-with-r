@@ -1,0 +1,12 @@
+# MSFT, SBUX and x_vals are still in your workspace
+
+# Normal curve for MSFT
+plot(x_vals, MSFT, type = "l", col = "blue", ylab = "Normal curves", 
+     ylim = c(0, 8))
+
+# Add a normal curve for SBUX
+lines(x_vals, SBUX, col = "red")
+
+# Add a plot legend
+legend("topleft", legend = c("Microsoft", "Starbucks"), 
+       col = c("blue", "red"), lty = 1)
