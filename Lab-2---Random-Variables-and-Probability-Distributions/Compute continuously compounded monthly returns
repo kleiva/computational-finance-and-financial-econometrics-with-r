@@ -1,0 +1,5 @@
+# The simple returns on Amazon (RA) and Costco (RC) are still in your workspace
+
+# Continuously compounded returns
+rA <- log(1 + RA)
+rC <- log(1 + RC)
