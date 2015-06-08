@@ -1,0 +1,10 @@
+# Note: return_matrix is preloaded in your workspace
+
+# Display all possible pair-wise scatter plots
+
+pairs(return_matrix, col="slateblue1", pch=16)
+
+
+# Compute 3 x 3 covariance and correlation matrices
+var(return_matrix)
+cor(return_matrix)
