@@ -1,0 +1,11 @@
+# The simple returns (sbux_ret) and the continuously compounded returns (sbux_ccret) have been preloaded in your workspace
+
+# Compute gross returns
+sbux_gret <- 1 + sbux_ret
+
+# Compute future values
+sbux_fv <- cumprod(sbux_gret)
+
+# Plot the evolution of the $1 invested in SBUX as a function of time
+plot(sbux_fv, type="l", col="blue", lwd=2, ylab="Dollars", 
+     main="FV of $1 invested in SBUX")
