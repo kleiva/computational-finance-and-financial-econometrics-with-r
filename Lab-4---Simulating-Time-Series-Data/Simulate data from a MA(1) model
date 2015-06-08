@@ -1,0 +1,3 @@
+set.seed(123);
+# Simulate 250 observations from the described MA(1) model
+ma1_sim <- arima.sim(model=list(ma=0.5), n=250, mean=0, sd=0.1) + 0.05
