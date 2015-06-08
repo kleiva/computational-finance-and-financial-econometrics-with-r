@@ -1,0 +1,10 @@
+# Note: return_matrix is preloaded in your workspace
+
+# Annualized continuously compounded mean 
+12*apply(return_matrix, 2, mean);
+
+# Annualized simple mean
+exp(12*apply(return_matrix, 2, mean)) - 1;
+
+# Annualized standard deviation values
+sqrt(12)*apply(return_matrix, 2, sd);
