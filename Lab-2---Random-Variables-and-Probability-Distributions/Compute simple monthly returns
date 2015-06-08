@@ -1,0 +1,7 @@
+# Vectors of prices
+PA <- c(38.23, 41.29)
+PC <- c(41.11, 41.74)
+
+# Simple monthly returns
+RA <- (PA[2] - PA[1]) / PA[1]
+RC <- (PC[2] - PC[1]) / PC[1]
