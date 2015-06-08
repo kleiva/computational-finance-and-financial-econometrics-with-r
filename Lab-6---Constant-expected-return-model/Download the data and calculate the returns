@@ -1,0 +1,20 @@
+VBLTX_prices <- get.hist.quote(instrument="vbltx", start="2005-09-01", end="2010-09-30", quote="AdjClose",provider="yahoo", origin="1970-01-01",compression="m", retclass="zoo", quiet = TRUE)
+FMAGX_prices <- get.hist.quote(instrument="fmagx", start="2005-09-01", end="2010-09-30", quote="AdjClose",provider="yahoo", origin="1970-01-01",compression="m", retclass="zoo", quiet = TRUE)
+SBUX_prices <- get.hist.quote(instrument="sbux", start="2005-09-01",end="2010-09-30", quote="AdjClose",provider="yahoo", origin="1970-01-01",compression="m", retclass="zoo", quiet = TRUE)
+
+# Change the class of the time index to yearmon, which is appropriate for monthly data.
+# index() and as.yearmon() are functions in the zoo package 
+index(VBLTX_prices) <- as.yearmon(index(VBLTX_prices))
+index(FMAGX_prices) <- as.yearmon(index(FMAGX_prices))
+index(SBUX_prices)  <- as.yearmon(index(SBUX_prices))
+
+# Create merged price data
+all_prices <- merge(VBLTX_prices, FMAGX_prices, SBUX_prices)
+# Rename columns
+colnames(all_prices) <- c("VBLTX", "FMAGX", "SBUX")
+
+# Calculate cc returns as difference in log prices
+all_returns <- diff(log(all_prices))
+
+# Create matrix with returns
+return_matrix <- coredata(all_returns)
