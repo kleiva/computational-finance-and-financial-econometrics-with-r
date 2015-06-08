@@ -1,0 +1,8 @@
+# Simulated values (xy_vals) and means (mu_x, mu_y) are still in your workspace
+
+# create scatterplot
+plot(xy_vals[, 1], xy_vals[, 2], pch = 16, cex = 2, col = "blue", 
+     main = "Bivariate normal: rho=0.9", xlab = "x", ylab = "y")
+
+# Add lines
+abline(h = mu_y, v = mu_x)
