@@ -1,0 +1,7 @@
+# The simple monthly return on Amazon (RA) is still in your workspace
+
+# Simple annual return
+RA_annual <- (1 + RA)^12 - 1
+
+# Continuously compounded annual return
+rA_annual <- log(1 + RA_annual)
