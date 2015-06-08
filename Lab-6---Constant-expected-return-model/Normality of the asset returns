@@ -1,0 +1,4 @@
+# The "all_returns" zoo object is preloaded in your workspace
+
+# Test the normality of the returns of VBLTX
+jarque.bera.test(all_returns[,"VBLTX"])
