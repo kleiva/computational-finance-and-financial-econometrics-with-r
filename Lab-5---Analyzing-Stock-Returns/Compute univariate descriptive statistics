@@ -1,0 +1,17 @@
+# Note: all_returns is preloaded in your workspace
+
+# Create matrix with returns
+return_matrix <- coredata(all_returns);
+
+summary(return_matrix)
+
+# Compute descriptive statistics by column using the base R function apply()
+args(apply)
+apply(return_matrix, 2, mean)
+apply(return_matrix, 2, var)
+apply(return_matrix, 2, sd)
+apply(return_matrix, 2, skewness)
+apply(return_matrix, 2, kurtosis)
+
+# A nice PerformanceAnalytics function that computes all of the relevant descriptive statistics is table.Stats
+table.Stats(all_returns)
