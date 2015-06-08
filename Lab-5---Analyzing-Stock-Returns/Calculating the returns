@@ -1,0 +1,15 @@
+# The variables VBLTX_prices, FMAGX_prices and SBUX_prices are preloaded in your workspace
+
+# Create merged price data
+all_prices <- merge(VBLTX_prices, FMAGX_prices, SBUX_prices)
+# Rename columns
+colnames(all_prices) <- c("VBLTX", "FMAGX", "SBUX")
+
+# Calculate cc returns as difference in log prices
+all_returns <- diff(log(all_prices))
+
+# Look at the return data
+start(all_returns)
+end(all_returns)
+colnames(all_returns) 
+head(all_returns)
