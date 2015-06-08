@@ -1,0 +1,15 @@
+# Load the mvtnorm package
+library("mvtnorm")
+
+# The covariance matrix (Sigma_xy) is still in your workspace
+
+# Means
+mu_x <- 0.05
+mu_y <- 0.025
+
+# Simulate 100 observations
+set.seed(123)  # for reproducibility
+xy_vals <- rmvnorm(100, mean=c(mu_x, mu_y), sigma = Sigma_xy) 
+
+# Have a look at the first observations
+head(xy_vals)
