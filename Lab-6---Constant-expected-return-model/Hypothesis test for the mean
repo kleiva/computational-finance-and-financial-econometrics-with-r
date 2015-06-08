@@ -1,0 +1,2 @@
+# The "all_returns" zoo object is preloaded in your workspace
+t.test(all_returns[,"VBLTX"])
