@@ -1,0 +1,15 @@
+# The simple returns (sbux_ret) and the continuously compounded returns (sbux_ccret) have been preloaded in your workspace
+
+# Plot the returns on the same graph
+plot(sbux_ret, type="l", col="blue", lwd=2, ylab="Return",
+               main="Monthly Returns on SBUX")
+
+# Add horizontal line at zero
+abline(h=0)
+
+# Add a legend
+legend(x="bottomright", legend=c("Simple", "CC"), 
+       lty=1, lwd=2, col=c("blue","red"))
+
+# Add the continuously compounded returns
+lines(sbux_ccret, col="red", lwd=2)
