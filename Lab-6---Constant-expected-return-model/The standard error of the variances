@@ -1,0 +1,11 @@
+# The variable return_matrix is preloaded in your workspace
+
+# Number of observations
+n_obs <- dim(return_matrix)[1]
+
+# Estimates of sigma2hat
+sigma2hat_vals <- apply(return_matrix, 2, var)
+
+# Standard Error of sigma2hat
+se_sigma2hat <- sigma2hat_vals/sqrt(n_obs/2)
+se_sigma2hat 
