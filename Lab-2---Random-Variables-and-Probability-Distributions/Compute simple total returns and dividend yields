@@ -1,0 +1,10 @@
+# The prices for Amazon (PA) are still in your workspace
+
+# Cash dividend per share
+DA <- 0.10
+
+# Simple total return
+RA_total <- (PA[2] + DA - PA[1]) / PA[1]
+
+# Dividend yield
+DY <- DA / PA[1]
