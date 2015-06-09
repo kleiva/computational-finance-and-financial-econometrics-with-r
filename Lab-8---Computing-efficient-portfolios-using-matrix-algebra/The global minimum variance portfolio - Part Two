@@ -1,0 +1,15 @@
+# All data and CER parameters are preloaded in your workspace.  Type 'ls()' in the console to see them.
+
+# set restriction matrices
+D_matrix <- 2* cov_mat_month
+D_matrix
+d_vector <- rep(0,4)
+d_vector
+A_matrix <- cbind(rep(1,4),diag(4))
+A_matrix
+b_vector <- c(1,rep(0,4))
+b_vector
+
+# use solve.QP to minimize portfolio variance
+quad_prog <- solve.QP(Dmat = D_matrix,dvec = d_vector, Amat = A_matrix, bvec = b_vector, meq = 1) 
+quad_prog
